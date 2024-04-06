@@ -1,25 +1,10 @@
 { config, ... }: {
   imports = [
-    ../home-manager/nvim.nix
-    ../home-manager/ags.nix
-    ../home-manager/blackbox.nix
-    ../home-manager/browser.nix
-    # ../home-manager/bspwm.nix
-    ../home-manager/dconf.nix
-    ../home-manager/distrobox.nix
-    ../home-manager/git.nix
-    # ../home-manager/helix.nix
-    ../home-manager/hyprland.nix
-    ../home-manager/lf.nix
-    ../home-manager/neofetch.nix
-    ../home-manager/packages.nix
-    ../home-manager/sh.nix
-    ../home-manager/starship.nix
-    ../home-manager/stm.nix
-    # ../home-manager/sway.nix
-    ../home-manager/theme.nix
-    ../home-manager/tmux.nix
-    ../home-manager/wezterm.nix
+    ../home/desktop
+    ../home/programs
+    ../home/dconf.nix
+    ../home/stm.nix
+    ../home/theme.nix
   ];
 
   news.display = "show";
@@ -53,9 +38,7 @@
     "file://${home}/Videos"
     "file://${home}/Downloads"
     "file://${home}/Desktop"
-    "file://${home}/Work"
     "file://${home}/Projects"
-    "file://${home}/Vault"
     "file://${home}/School"
     "file://${home}/.config Config"
   ];

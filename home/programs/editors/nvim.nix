@@ -31,7 +31,7 @@
   ];
 in {
   xdg = {
-    configFile.nvim.source = ../nvim;
+    configFile.nvim.source = ../../../nvim;
     desktopEntries."nvim" = ifLinux {
       name = "NeoVim";
       comment = "Edit text files";
