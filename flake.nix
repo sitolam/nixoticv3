@@ -27,7 +27,7 @@
           # hardware module for xps 15 9570
           inputs.nixos-hardware.nixosModules.dell-xps-15-9570-nvidia
 
-          ./nixos/nixos.nix
+          ./hosts/nixos.nix
           home-manager.nixosModules.home-manager
           {
             users.users.${username} = {
@@ -93,4 +93,5 @@
       flake = false;
     };
   };
+};
 }
