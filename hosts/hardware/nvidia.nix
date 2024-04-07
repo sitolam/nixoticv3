@@ -3,11 +3,6 @@
   # inputs,
   ...
 }: {
-  imports = [
-    ./hardware-configuration.nix
-    ./powersave.nix
-    ./nvidia.nix
-  ];
 
   #  age.secrets.spotify = {
   #    file = "${self}/secrets/spotify.age";

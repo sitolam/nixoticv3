@@ -6,7 +6,7 @@
     ./network
     ./geography/locale.nix
     ./packages
-    ./hyprland.nix
+    ./desktop/hyprland.nix
   ];
 
   # nix

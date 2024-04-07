@@ -1,10 +1,9 @@
 {
   description = "Configurations of sitolam";
 
-  outputs = inputs@{ self, home-manager, nix-darwin, nixpkgs, ... }: {
+  outputs = inputs@{ self, home-manager, nixpkgs, ... }: {
     formatter = {
       x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-      x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
     };
 
     packages.x86_64-linux.default =
@@ -12,7 +11,7 @@
 
     # nixos config
     nixosConfigurations = {
-      "nixos" = let
+      "nixotic" = let
         hostname = "nixotic";
         username = "sitolam";
       in
@@ -25,7 +24,7 @@
         modules = [
           
           # hardware module for xps 15 9570
-          inputs.nixos-hardware.nixosModules.dell-xps-15-9570-nvidia
+          #inputs.nixos-hardware.nixosModules.dell-xps-15-9570-nvidia
 
           ./hosts/nixos.nix
           home-manager.nixosModules.home-manager
@@ -58,6 +57,7 @@
         ];
       };
     };
+  };  
 
 
   inputs = {
@@ -67,12 +67,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-darwin = {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    
+    nur.url = "github:nix-community/NUR";
+    
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -93,5 +90,4 @@
       flake = false;
     };
   };
-};
 }

@@ -22,5 +22,5 @@
   };
 
   console.useXkbConfig = true;
-  services.xserver.xkb.layout = "us-acentos";
+  services.xserver.xkb.layout = "us";
 }

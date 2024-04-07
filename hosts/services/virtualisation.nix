@@ -1,4 +1,4 @@
-_{
+{
 
 programs.virt-manager.enable = true;
   virtualisation = {
