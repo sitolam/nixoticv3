@@ -3,7 +3,7 @@ if [ "$(uname)" == "Darwin" ]; then
     zsh -c "/run/current-system/sw/bin/tmux new-session -d -s session '/run/current-system/sw/bin/nu'"
     zsh -c "/run/current-system/sw/bin/tmux attach-session -t session"
 else
-    tmux
+    tmux 
 fi
 ]]
 
@@ -34,7 +34,7 @@ return {
         brightness = 0.8,
     },
 
-    window_background_opacity = 1.0,
+    window_background_opacity = 0.6,
     text_background_opacity = 1.0,
 
     keys = require("keys"),

@@ -1,8 +1,8 @@
 {
   
   imports = [
-    ./hyprland.nix
     ./ags.nix
+    ./hyprland
     # ./bspwm.nix
     # ./sway.nix
   ];

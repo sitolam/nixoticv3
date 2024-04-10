@@ -37,13 +37,12 @@ in
       exec-once = [
         "ags -b hypr"
         "hyprctl setcursor Qogir 24"
-        "transmission-gtk"
       ];
 
       monitor = [
-        # "eDP-1, 1920x1080, 0x0, 1"
-        # "HDMI-A-1, 2560x1440, 1920x0, 1"
-        ",preferred,auto,1"
+        "DP-1, 1920x1080, 0x0, 1"
+        "eDP-1, 1920x1080, 1920x0, 1, transform, 1"
+        #",preferred,auto,1"
       ];
 
       general = {
@@ -58,7 +57,7 @@ in
       };
 
       input = {
-        kb_layout = "hu";
+        kb_layout = "us";
         follow_mouse = 1;
         touchpad = {
           natural_scroll = "yes";
@@ -114,26 +113,27 @@ in
         arr = [1 2 3 4 5 6 7 8 9];
       in [
         "CTRL SHIFT, R,  ${e} quit; ags -b hypr"
-        "SUPER, R,       ${e} -t launcher"
+        "SUPER, A,       ${e} -t launcher"
         "SUPER, Tab,     ${e} -t overview"
         ",XF86PowerOff,  ${e} -r 'powermenu.shutdown()'"
+        "SUPER, Backspace, ${e} -r 'powermenu.shutdown()'"
         ",XF86Launch4,   ${e} -r 'recorder.start()'"
         ",Print,         ${e} -r 'recorder.screenshot()'"
         "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"
-        "SUPER, Return, exec, xterm" # xterm is a symlink, not actually xterm
-        "SUPER, W, exec, firefox"
-        "SUPER, E, exec, wezterm -e lf"
+        "SUPER, T, exec, xterm" # xterm is a symlink, not actually xterm
+        "SUPER, B, exec, firefox"
+        "SUPER, F, exec, wezterm -e lf"
 
         # youtube
         ", XF86Launch1,  exec, ${yt}"
 
         "ALT, Tab, focuscurrentorlast"
         "CTRL ALT, Delete, exit"
-        "ALT, Q, killactive"
-        "SUPER, F, togglefloating"
+        "SUPER, Q, killactive"
+        "SUPER, W, togglefloating"
         "SUPER, G, fullscreen"
         "SUPER, O, fakefullscreen"
-        "SUPER, P, togglesplit"
+        "SUPER, J, togglesplit"
 
         "SUPER, space, hyprexpo:expo, toggle"
 
