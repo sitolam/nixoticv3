@@ -4,7 +4,6 @@
   outputs = inputs @ {
     self,
     home-manager,
-    nix-darwin,
     nixpkgs,
     ...
   }: {
