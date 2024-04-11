@@ -1,5 +1,8 @@
-{ inputs, pkgs, ... }:
-let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
 
@@ -11,14 +14,13 @@ let
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   pactl = "${pkgs.pulseaudio}/bin/pactl";
-in
-{
+in {
   xdg.desktopEntries."org.gnome.Settings" = {
     name = "Settings";
     comment = "Gnome Control Center";
     icon = "org.gnome.Settings";
     exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
-    categories = [ "X-Preferences" ];
+    categories = ["X-Preferences"];
     terminal = false;
   };
 
@@ -112,7 +114,8 @@ in
         mvtows = binding "SUPER SHIFT" "movetoworkspace";
         e = "exec, ags -b hypr";
         arr = [1 2 3 4 5 6 7 8 9];
-      in [
+      in 
+        [
         "CTRL SHIFT, R,  ${e} quit; ags -b hypr"
         "SUPER, A,       ${e} -t launcher"
         "SUPER, Tab,     ${e} -t overview"
@@ -167,7 +170,7 @@ in
         ",XF86AudioLowerVolume,  exec, ${pactl} set-sink-volume @DEFAULT_SINK@ -5%"
       ];
 
-      bindl =  [
+      bindl = [
         ",XF86AudioPlay,    exec, ${playerctl} play-pause"
         ",XF86AudioStop,    exec, ${playerctl} pause"
         ",XF86AudioPause,   exec, ${playerctl} pause"
@@ -215,15 +218,16 @@ in
 
       plugin = {
         hyprexpo = {
-            columns = 3;
-            gap_size = 5;
-            bg_col = "rgb(232323)";
-            workspace_method = "center current";
-            enable_gesture = true;
-            gesture_distance = 300;
-            gesture_positive = false;
+          columns = 3;
+          gap_size = 5;
+          bg_col = "rgb(232323)";
+          workspace_method = "center current";
+          enable_gesture = true;
+          gesture_distance = 300;
+          gesture_positive = false;
         };
-        hyprbars = {
+        hyprbars = {{ inputs, pkgs, ... }:
+let
           bar_color = "rgb(2a2a2a)";
           bar_height = 28;
           col_text = "rgba(ffffffdd)";

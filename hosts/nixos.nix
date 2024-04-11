@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{pkgs, inputs, ...}: {
 
   imports = [
     ./hardware
@@ -48,7 +48,7 @@
   services = {
     xserver = {
       enable = true;
-      excludePackages = [ pkgs.xterm ];
+      excludePackages = [pkgs.xterm];
       displayManager.sddm = {
           enable = true;
           wayland.enable = true;
