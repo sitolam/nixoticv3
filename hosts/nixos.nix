@@ -49,6 +49,10 @@
     xserver = {
       enable = true;
       excludePackages = [ pkgs.xterm ];
+      displayManager.sddm = {
+          enable = true;
+          wayland.enable = true;
+        };
     };
     printing.enable = true;
     flatpak.enable = true;
