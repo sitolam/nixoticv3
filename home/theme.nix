@@ -19,9 +19,9 @@
     package = nerdfonts;
   };
   cursorTheme = {
-    name = "Qogir";
+    name = "Bibata-Modern-Classic";
     size = 24;
-    package = pkgs.qogir-icon-theme;
+    package = pkgs.bibata-cursors;
   };
   iconTheme = {
     name = "MoreWaita";
@@ -47,6 +47,7 @@ in {
       cursorTheme
       // {
         gtk.enable = true;
+        x11.enable = true;
       };
     file = {
       ".local/share/themes/${theme.name}" = {
