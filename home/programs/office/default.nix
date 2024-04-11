@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./zathura.nix
-    ./vscodium.nix
+    ./vscode.nix
   ];
 
   home.packages = with pkgs; [
