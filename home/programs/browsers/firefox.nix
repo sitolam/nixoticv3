@@ -8,12 +8,12 @@
     # };
 
     file."chrome" = {
-      target = ".mozilla/firefox/default";
+      target = ".mozilla/firefox/default/chrome";
       source = "./css/chrome";
     };
 
     file."user.js" = {
-      target = ".mozilla/firefox/default";
+      target = ".mozilla/firefox/default/user.js";
       source = "./css/user.js";
     };
 
