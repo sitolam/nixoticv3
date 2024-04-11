@@ -58,6 +58,7 @@ in
 
       input = {
         kb_layout = "us";
+        kb_variant = "intl";
         follow_mouse = 1;
         touchpad = {
           natural_scroll = "yes";
