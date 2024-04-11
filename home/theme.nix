@@ -20,7 +20,7 @@
   };
   cursorTheme = {
     name = "Bibata-Modern-Classic";
-    size = 24;
+    size = 20;
     package = pkgs.bibata-cursors;
   };
   iconTheme = {
