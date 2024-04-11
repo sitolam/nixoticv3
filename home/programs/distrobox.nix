@@ -1,4 +1,9 @@
-{ pkgs, config, ... }: with builtins; let
+{
+  pkgs,
+  config,
+  ...
+}:
+with builtins; let
   mkHome = box: ".local/share/distrobox/${box}";
 
   boxes = {
@@ -19,6 +24,17 @@
     };
   };
 
+  yay = pkgs.writeShellScriptBin "yay" ''
+    if [[ ! -f "/bin/yay" ]]; then
+      pacman -S --needed git base-devel
+      git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
+      cd $HOME/yay-bin
+      makepkg -si
+    fi
+
+    /bin/yay $@
+  '';
+
   mkBoxLinks = box: let
     ln = config.lib.file.mkOutOfStoreSymlink;
     links = [
@@ -31,25 +47,29 @@
       ".local/"
       ".cache/"
     ];
-  in listToAttrs (map (link: {
-    name = "${box.home}/${link}";
-    value = {
-      source = ln "${config.home.homeDirectory}/${link}";
-    };
-  }) links);
+  in
+    listToAttrs (map (link: {
+        name = "${box.home}/${link}";
+        value = {
+          source = ln "${config.home.homeDirectory}/${link}";
+        };
+      })
+      links);
 
   mkBoxAlias = let
     db = "${pkgs.distrobox}/bin/distrobox";
-  in box: pkgs.writeShellScriptBin box.alias ''
-    if ! ${db} list | grep ${box.alias}; then
-        ${db} create \
-          --name "${box.alias}" \
-          --home ${config.home.homeDirectory}/${box.home} \
-          --image "${box.img}"
-    fi
+  in
+    box:
+      pkgs.writeShellScriptBin box.alias ''
+        if ! ${db} list | grep ${box.alias}; then
+            ${db} create \
+              --name "${box.alias}" \
+              --home ${config.home.homeDirectory}/${box.home} \
+              --image "${box.img}"
+        fi
 
-    ${db} enter ${box.alias}
-  '';
+        ${db} enter ${box.alias}
+      '';
 
   path = [
     "/bin"
@@ -59,31 +79,44 @@
     "/usr/local/bin"
     "/usr/sbin"
     "${pkgs.nix}/bin"
+    "${pkgs.nushell}/bin"
+    "${pkgs.zsh}/bin"
+    "${yay}/bin"
+  ];
+
+  shPath = path ++ [
+    "$HOME/.local/bin"
+  ];
+
+  nuPath = path ++ [
+    "$\"($env.HOME)/.local/bin\""
   ];
 in {
   home.packages = let
     aliases = mapAttrs (name: value: mkBoxAlias value) boxes;
-  in (attrValues aliases) ++ [pkgs.distrobox];
+  in
+    (attrValues aliases) ++ [pkgs.distrobox];
 
   home.file = let
     links = mapAttrs (name: value: mkBoxLinks value) boxes;
-  in foldl' (x: y: x // y) {} (attrValues links);
+  in
+    foldl' (x: y: x // y) {} (attrValues links);
 
   programs.bash.initExtra = ''
     if [[ -f "/run/.containerenv" ]]; then
-      export PATH="${concatStringsSep ":" path}"
+      export PATH="${concatStringsSep ":" shPath}"
     fi
   '';
 
   programs.zsh.initExtra = ''
     if [[ -f "/run/.containerenv" ]]; then
-      export PATH="${concatStringsSep ":" path}"
+      export PATH="${concatStringsSep ":" shPath}"
     fi
   '';
 
   programs.nushell.extraConfig = ''
     if ("/run/.containerenv" | path exists) {
-      $env.PATH = [${concatStringsSep " " (map (x: "${x}") path)}]
+      $env.PATH = [${concatStringsSep " " nuPath}]
     }
   '';
 }

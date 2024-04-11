@@ -1,7 +1,13 @@
 {
   description = "Configurations of sitolam";
 
-  outputs = inputs@{ self, home-manager, nixpkgs, ... }: {
+  outputs = inputs @ {
+    self,
+    home-manager,
+    nix-darwin,
+    nixpkgs,
+    ...
+  }: {
     formatter = {
       x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     };

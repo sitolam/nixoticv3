@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ... }: {
   xdg.desktopEntries = {
     "lf" = {
       name = "lf";
@@ -9,7 +8,7 @@
 
   home.packages = with pkgs; with gnome; [
     # gui
-    (mpv.override { scripts = [mpvScripts.mpris]; })
+    (mpv.override { scripts = [mpvScripts.mpris];})
     spotify
     caprine-bin
     d-spy
