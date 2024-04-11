@@ -226,8 +226,7 @@ in {
           gesture_distance = 300;
           gesture_positive = false;
         };
-        hyprbars = {{ inputs, pkgs, ... }:
-let
+        hyprbars = {
           bar_color = "rgb(2a2a2a)";
           bar_height = 28;
           col_text = "rgba(ffffffdd)";
