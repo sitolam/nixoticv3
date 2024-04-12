@@ -82,9 +82,9 @@
         "idleinhibit fullscreen, class:^(firefox)$"
 
         # fix xwayland apps
-        "rounding 0, xwayland:1"
-        "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
-        "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
+        # "rounding 0, xwayland:1"
+        # "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
+        # "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
       ];
     };
   };  
