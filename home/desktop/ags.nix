@@ -28,6 +28,11 @@
     gtk3
   ];
 
+    home.file."options.json" = {
+      target = ".cache/ags/options.json",;
+      source = ../../ags/options.json;
+    };
+
   programs.astal = {
     enable = true;
     extraPackages = with pkgs; [
