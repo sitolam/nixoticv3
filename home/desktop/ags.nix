@@ -28,8 +28,7 @@
     gtk3
   ];
 
-    home.file."options.json" = {
-      target = ".cache/ags/options.json";
+    home.file.".cache/ags/options.json" = {
       source = ../../ags/options.json;
     };
 
