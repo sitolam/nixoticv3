@@ -117,7 +117,7 @@ in {
       in 
         [
         "CTRL SHIFT, R,  ${e} quit; ags -b hypr"
-        "SUPER, A,       ${e} -t launcher"
+        "SUPER,          ${e} -t launcher"
         "SUPER, Tab,     ${e} -t overview"
         ",XF86PowerOff,  ${e} -r 'powermenu.shutdown()'"
         "SUPER, Backspace, ${e} -r 'powermenu.shutdown()'"
@@ -126,7 +126,7 @@ in {
         "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"
         "SUPER, T, exec, xterm" # xterm is a symlink, not actually xterm
         "SUPER, B, exec, firefox"
-        "SUPER, F, exec, wezterm -e lf"
+        "SUPER, F, exec, nautilus"
 
         # youtube
         ", XF86Launch1,  exec, ${yt}"
