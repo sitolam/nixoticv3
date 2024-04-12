@@ -33,8 +33,6 @@
         "opacity 0.80 0.80,class:^(Spotify)$"
         "opacity 0.80 0.80,class:^(Code)$"
         "opacity 0.80 0.80,class:^(code-url-handler)$"
-        "opacity 0.80 0.80,class:^(alacritty)$"
-        "opacity 0.80 0.80,class:^(org.kde.dolphin)$"
         "opacity 0.80 0.80,class:^(org.kde.ark)$"
         "opacity 0.80 0.80,class:^(nwg-look)$"
         "opacity 0.80 0.80,class:^(qt5ct)$"

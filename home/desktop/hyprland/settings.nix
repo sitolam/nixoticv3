@@ -81,6 +81,7 @@ in {
           contrast = 0.9;
           brightness = 0.8;
           popups = true;
+          ignore_opacity = true;
         };
       };
 
