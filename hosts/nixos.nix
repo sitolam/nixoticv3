@@ -7,6 +7,7 @@
     ./geography/locale.nix
     ./packages
     ./desktop/hyprland.nix
+    ../pkgs
   ];
 
   # nix
