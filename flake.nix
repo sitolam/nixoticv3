@@ -5,6 +5,7 @@
     self,
     home-manager,
     nixpkgs,
+    nixos-hardware,
     ...
   }: {
     formatter = {
@@ -29,7 +30,7 @@
         modules = [
           
           # hardware module for xps 15 9570
-          #inputs.nixos-hardware.nixosModules.dell-xps-15-9570-nvidia
+          inputs.nixos-hardware.nixosModules.dell-xps-15-9570-nvidia
 
           ./hosts/nixos.nix
           home-manager.nixosModules.home-manager
