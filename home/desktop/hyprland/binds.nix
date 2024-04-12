@@ -131,7 +131,7 @@ in {
       ++ workspaces; # Switch workspaces with mod + workspace and move active window to a workspace with mod + SHIFT + workspace
 
       bindr = [
-        "SUPER, exec, ags -b hypr -t launcher" # laucnher
+        "SUPER, SUPER_L, exec, ags -b hypr -t launcher" # launcher
       ];
 
       binde = [
