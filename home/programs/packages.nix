@@ -10,11 +10,9 @@
     # gui
     (mpv.override { scripts = [mpvScripts.mpris];})
     spotify
-    caprine-bin
     d-spy
     github-desktop
     gimp
-    transmission_4-gtk
     discord
     icon-library
     dconf-editor
