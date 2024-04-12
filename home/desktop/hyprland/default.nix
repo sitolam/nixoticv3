@@ -5,10 +5,9 @@
 }: {
   imports = [
     inputs.hyprland.homeManagerModules.default
-    #./binds.nix
-    #./rules.nix
     ./settings.nix
-    ./hyprland.nix
+    ./binds.nix
+    ./rules.nix
   ];
 
   wayland.windowManager.hyprland = {
