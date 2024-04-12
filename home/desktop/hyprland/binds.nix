@@ -58,7 +58,6 @@ in {
         
         # Session actions
         "CTRL SHIFT, R,  ${e} quit; ags -b hypr" # reload ags bar
-        "SUPER,          ${e} -t launcher" # laucnher
         "SUPER, Tab,     ${e} -t overview" # overview
         ",XF86PowerOff,  ${e} -t powermenu" # logout menu
         "SUPER, Backspace, ${e} -t powermenu" # logout menu
@@ -130,6 +129,10 @@ in {
 
       ]
       ++ workspaces; # Switch workspaces with mod + workspace and move active window to a workspace with mod + SHIFT + workspace
+
+      bindr = [
+        "SUPER, exec, ags -b hypr -t launcher" # laucnher
+      ];
 
       binde = [
         # Resize windows
