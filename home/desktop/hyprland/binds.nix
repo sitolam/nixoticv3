@@ -112,8 +112,8 @@ in {
         "SUPER, mouse_up, workspace, m-1"
         
         # Special workspaces (scratchpad)
-        "$mod, M, movetoworkspace, special"
-        "$mod, S, togglespecialworkspace"
+        "SUPER, M, movetoworkspace, special"
+        "SUPER, S, togglespecialworkspace"
 
         # cycle workspaces
         "SUPER, bracketleft, workspace, m-1"
