@@ -24,7 +24,7 @@
         "workspace 7, title:Spotify"
       ];
 
-      windowrulev2 = {
+      windowrulev2 = [
         "opacity 0.90 0.90,class:^(firefox)$"
         "opacity 0.90 0.90,class:^(Brave-browser)$"
         "opacity 0.80 0.80,class:^(Steam)$"
@@ -62,7 +62,31 @@
         "opacity 0.80 0.70,class:^(nm-applet)$"
         "opacity 0.80 0.70,class:^(nm-connection-editor)$"
         "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
-      };
+
+        # telegram media viewer
+        "float, title:^(Media viewer)$"
+
+        # allow tearing in games
+        "immediate, class:^(osu\!|cs2)$"
+
+        # make Firefox PiP window floating and sticky
+        "float, title:^(Picture-in-Picture)$"
+        "pin, title:^(Picture-in-Picture)$"
+
+        # throw sharing indicators away
+        "workspace special silent, title:^(Firefox — Sharing Indicator)$"
+        "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
+
+        # idle inhibit while watching videos
+        "idleinhibit focus, class:^(mpv|.+exe|celluloid)$"
+        "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
+        "idleinhibit fullscreen, class:^(firefox)$"
+
+        # fix xwayland apps
+        "rounding 0, xwayland:1"
+        "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
+        "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
+      ];
     };
   };  
 }
