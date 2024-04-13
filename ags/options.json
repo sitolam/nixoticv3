@@ -1,5 +1,4 @@
 {
-  // Your options go here...
   "autotheme": true,
   "theme.dark.widget": "#eedfe2",
   "theme.light.widget": "#21191c",
@@ -33,5 +32,5 @@
   "hyprland.gapsWhenOnly": true,
   "theme.spacing": 5,
   "theme.padding": 7,
-  "quicksettings.avatar.image": "~/.config/ags/avatar.png"
+  "quicksettings.avatar.image": "/home/sitolam/.config/ags/avatar.png"
 }
