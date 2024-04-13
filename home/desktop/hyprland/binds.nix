@@ -72,7 +72,7 @@ in {
         # Application shortcuts
         "SUPER, T, exec, xterm" # xterm is a symlink, not actually xterm
         "SUPER, B, exec, firefox" # open browser firefox
-        "SUPER, F, exec, nautilus" # open file manager
+        "SUPER, F, exec, nautilus -w" # open file manager
         "SUPER, C, exec, code" # open vscode
 
         # youtube
