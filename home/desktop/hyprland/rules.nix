@@ -38,7 +38,7 @@
         "opacity 0.80 0.80,class:^(qt5ct)$"
         "opacity 0.80 0.80,class:^(qt6ct)$"
         "opacity 0.80 0.80,class:^(kvantummanager)$"
-        "opacity 0.80 0.80,class:^(nautilus)$"
+        "opacity 0.80 0.80,class:^(org.gnome.Nautilus)$"
         
         "opacity 0.90 0.90,class:^(com.github.rafostar.Clapper)$" #Clapper-Gtk
         "opacity 0.80 0.80,class:^(com.github.tchx84.Flatseal)$" #Flatseal-Gtk
