@@ -1,4 +1,5 @@
 {
+  // Your options go here...
   "autotheme": true,
   "theme.dark.widget": "#eedfe2",
   "theme.light.widget": "#21191c",
@@ -31,5 +32,6 @@
   "bar.battery.width": 50,
   "hyprland.gapsWhenOnly": true,
   "theme.spacing": 5,
-  "theme.padding": 7
+  "theme.padding": 7,
+  "quicksettings.avatar.image": "~/.config/ags/avatar.png"
 }
