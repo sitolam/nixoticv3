@@ -22,7 +22,8 @@
   
   # kde connect
   networking.firewall = rec {
-    allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    enable = false;
+    allowedTCPPortRanges = [{ from = 1714; to = 1764; } 47984 47989 47990 48010 ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 

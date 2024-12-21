@@ -65,7 +65,7 @@ in {
         # Screenshot/Screencapture
         ",XF86Launch4,   ${e} -r 'recorder.start()'"
         ",Print,         ${e} -r 'recorder.screenshot()'"
-        "SUPER SHIFT, R, ${e} -r 'recorder.screenshot()'"
+        "SUPER SHIFT, P, ${e} -r 'recorder.screenshot()'"
         "SHIFT,Print,    ${e} -r 'recorder.screenshot(true)'"
         "SUPER, O, exec, wl-ocr" # select area to perform OCR on
 
@@ -77,6 +77,7 @@ in {
 
         # youtube
         ", XF86Launch1,  exec, ${yt}"
+        "SUPER, Y, exec, ${yt}"
 
         "CTRL ALT, Delete, exit"
         "SUPER, Q, killactive" # killactive, kill the window on focus

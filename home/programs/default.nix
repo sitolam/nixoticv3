@@ -8,9 +8,11 @@
     ./packages.nix
     ./distrobox.nix
     ./git.nix
+    ./school/school.nix
   ];
 
   home.packages = with pkgs; [
+    element-desktop
     tdesktop
     vesktop
     overskride
